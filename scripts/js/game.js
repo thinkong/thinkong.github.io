@@ -9,8 +9,8 @@ var Namespace;
         __extends(Game, _super);
         function Game() {
             _super.call(this, {
-                width: window.innerWidth,
-                height: window.innerHeight,
+                width: 800,
+                height: 1024,
                 renderer: Phaser.AUTO
             });
             this.state.add('preloader', Namespace.State.Preloader, true);

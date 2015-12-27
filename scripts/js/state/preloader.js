@@ -13,9 +13,13 @@ var Namespace;
                 _super.apply(this, arguments);
             }
             Preloader.prototype.preload = function () {
+                this.game.stage.disableVisibilityChange = true;
+                this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+                this.game.scale.pageAlignVertically = true;
                 this.loadingBar = new Namespace.Entity.PreloadBar(this.game);
                 this.load.image('phaser-logo', 'assets/images/phaser-logo.png');
                 this.load.spritesheet('items', 'assets/images/equipment.png', 34, 34);
+                this.load.spritesheet('chars', 'assets/images/tmpchar_1.png', 32, 48);
             };
             Preloader.prototype.create = function () {
                 this.loadingBar.setFillPercent(100);
