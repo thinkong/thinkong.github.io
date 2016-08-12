@@ -13,11 +13,11 @@ var Namespace;
                 _super.apply(this, arguments);
             }
             Game.prototype.create = function () {
-                this.inventory = new Namespace.Entity.Inventory(this);
-                this.items = this.game.add.physicsGroup(Phaser.Physics.ARCADE);
                 var img = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'phaser-logo');
                 img.anchor.x = 0.5;
                 img.anchor.y = 0.5;
+                this.inventory = new Namespace.Entity.Inventory(this);
+                this.items = this.game.add.physicsGroup(Phaser.Physics.ARCADE);
                 this.physics.startSystem(Phaser.Physics.ARCADE);
                 this.char = this.game.add.sprite(this.game.world.centerX, this.game.world.height, 'chars', 20);
                 this.char.anchor.set(0.5, 1);
